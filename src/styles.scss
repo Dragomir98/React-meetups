@@ -49,7 +49,7 @@ body {
 }
 
 .page-title {
-  margin: $margin-xl 0 !important;
+  padding: $margin-xl 0 !important;
 }
 
 h5,
@@ -118,6 +118,13 @@ section {
     padding: $margin-xs 0;
     color: var(--dark-color);
     font-weight: 500;
+
+    span {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
   }
 
   .meetup-actions {
