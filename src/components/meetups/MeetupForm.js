@@ -1,23 +1,30 @@
 import Card from "../ui/Card";
-import { useState } from "react";
 import { Container, TextField, Button, FormGroup } from "@material-ui/core";
+import FormStates from "./FormStates";
+import CancelIcon from "@material-ui/icons/Cancel";
 
 export default function MeetupForm(props) {
-  const [title, setTitle] = useState(false);
-  const [image, setImage] = useState(false);
-  const [address, setAddress] = useState(false);
-  const [description, setDescription] = useState(false);
-  const [titleError, setTitleError] = useState(false);
-  const [imageError, setImageError] = useState(false);
-  const [addressError, setAddressError] = useState(false);
-  const [descriptionError, setDescriptionError] = useState(false);
+  const {
+    title,
+    setTitle,
+    image,
+    setImage,
+    address,
+    setAddress,
+    description,
+    setDescription,
+    titleError,
+    setTitleError,
+    imageError,
+    setImageError,
+    addressError,
+    setAddressError,
+    descriptionError,
+    setDescriptionError,
+  } = FormStates();
 
   function handleSubmit(e) {
     e.preventDefault();
-    setTitleError(false);
-    setImageError(false);
-    setAddressError(false);
-    setDescriptionError(false);
 
     if (!title) {
       setTitleError(true);
@@ -61,6 +68,12 @@ export default function MeetupForm(props) {
               color="primary"
               error={titleError}
             />
+            <span
+              className="resetInput"
+              onClick={() => (document.getElementById("title").value = "")}
+            >
+              <CancelIcon />
+            </span>
           </FormGroup>
 
           <FormGroup className="form-field">
@@ -75,6 +88,12 @@ export default function MeetupForm(props) {
               variant="outlined"
               error={imageError}
             />
+            <span
+              className="resetInput"
+              onClick={() => (document.getElementById("image").value = "")}
+            >
+              <CancelIcon />
+            </span>
           </FormGroup>
 
           <FormGroup className="form-field">
@@ -89,6 +108,12 @@ export default function MeetupForm(props) {
               variant="outlined"
               error={addressError}
             />
+            <span
+              className="resetInput"
+              onClick={() => (document.getElementById("address").value = "")}
+            >
+              <CancelIcon />
+            </span>
           </FormGroup>
 
           <FormGroup className="form-field">
@@ -103,6 +128,14 @@ export default function MeetupForm(props) {
               variant="outlined"
               error={descriptionError}
             />
+            <span
+              className="resetInput"
+              onClick={() =>
+                (document.getElementById("description").value = "")
+              }
+            >
+              <CancelIcon />
+            </span>
           </FormGroup>
 
           <div align="center">

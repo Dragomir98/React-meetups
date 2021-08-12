@@ -1,38 +1,31 @@
 import Card from "../ui/Card";
-import { useState, useRef, useEffect } from "react";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { TextField, Container, Button, FormGroup } from "@material-ui/core";
+import FormStates from "./FormStates";
+import { useEffect } from "react";
 
 export default function EditMeetupForm(props) {
-  const [title, setTitle] = useState(props.currentMeetup.title);
-  const [image, setImage] = useState(props.currentMeetup.image);
-  const [address, setAddress] = useState(props.currentMeetup.address);
-  const [description, setDescription] = useState(
-    props.currentMeetup.description
-  );
-  const [titleError, setTitleError] = useState(false);
-  const [imageError, setImageError] = useState(false);
-  const [addressError, setAddressError] = useState(false);
-  const [descriptionError, setDescriptionError] = useState(false);
-
-  // useEffect(() => {
-  //   const inputReset = () => {
-  //     setTitle("");
-  //   };
-  // }, []);
-
-  let titleRef = useRef(title).current;
-  let imageRef = useRef(image).current;
-  let addressRef = useRef(title).current;
-  let descriptionRef = useRef(title).current;
+  const {
+    title,
+    setTitle,
+    image,
+    setImage,
+    address,
+    setAddress,
+    description,
+    setDescription,
+    titleError,
+    setTitleError,
+    imageError,
+    setImageError,
+    addressError,
+    setAddressError,
+    descriptionError,
+    setDescriptionError,
+  } = FormStates();
 
   function handleSubmit(e) {
     e.preventDefault();
-    e.target.reset();
-    setTitleError(false);
-    setImageError(false);
-    setAddressError(false);
-    setDescriptionError(false);
 
     if (!title) {
       setTitleError(true);
@@ -60,6 +53,13 @@ export default function EditMeetupForm(props) {
     }
   }
 
+  useEffect(() => {
+    setTitle(props.currentMeetup.title);
+    setImage(props.currentMeetup.image);
+    setDescription(props.currentMeetup.description);
+    setAddress(props.currentMeetup.address);
+  }, []);
+
   return (
     <Container maxWidth="sm">
       <Card>
@@ -75,7 +75,7 @@ export default function EditMeetupForm(props) {
               error={titleError}
               color="primary"
               variant="outlined"
-              defaultValue={title}
+              value={title}
             />
             <span className="resetInput" onClick={() => setTitle("")}>
               <CancelIcon />
@@ -92,7 +92,7 @@ export default function EditMeetupForm(props) {
               error={imageError}
               color="primary"
               variant="outlined"
-              defaultValue={image}
+              value={image}
             />
             <span className="resetInput" onClick={() => setImage("")}>
               <CancelIcon />
@@ -109,7 +109,7 @@ export default function EditMeetupForm(props) {
               error={addressError}
               color="primary"
               variant="outlined"
-              defaultValue={address}
+              value={address}
             />
             <span className="resetInput" onClick={() => setAddress("")}>
               <CancelIcon />
@@ -126,7 +126,7 @@ export default function EditMeetupForm(props) {
               error={descriptionError}
               color="primary"
               variant="outlined"
-              defaultValue={description}
+              value={description}
             />
             <span className="resetInput" onClick={() => setDescription("")}>
               <CancelIcon />
