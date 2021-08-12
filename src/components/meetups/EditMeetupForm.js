@@ -3,6 +3,7 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import { TextField, Container, Button, FormGroup } from "@material-ui/core";
 import FormStates from "./FormStates";
 import { useEffect } from "react";
+import StyledInput from "../ui/StyledInput";
 
 export default function EditMeetupForm(props) {
   const {
@@ -65,7 +66,7 @@ export default function EditMeetupForm(props) {
       <Card>
         <form onSubmit={handleSubmit}>
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup title"
               type="text"
@@ -82,7 +83,7 @@ export default function EditMeetupForm(props) {
             </span>
           </FormGroup>
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup image"
               type="url"
@@ -99,7 +100,7 @@ export default function EditMeetupForm(props) {
             </span>
           </FormGroup>
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup address"
               type="text"
@@ -116,7 +117,7 @@ export default function EditMeetupForm(props) {
             </span>
           </FormGroup>
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup description"
               type="text"

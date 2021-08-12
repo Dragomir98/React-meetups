@@ -1,7 +1,8 @@
 import Card from "../ui/Card";
-import { Container, TextField, Button, FormGroup } from "@material-ui/core";
+import { Container, Button, FormGroup } from "@material-ui/core";
 import FormStates from "./FormStates";
 import CancelIcon from "@material-ui/icons/Cancel";
+import StyledInput from "../ui/StyledInput";
 
 export default function MeetupForm(props) {
   const {
@@ -57,7 +58,7 @@ export default function MeetupForm(props) {
       <Card>
         <form onSubmit={handleSubmit}>
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup title"
               type="text"
@@ -77,7 +78,7 @@ export default function MeetupForm(props) {
           </FormGroup>
 
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup image"
               type="url"
@@ -97,7 +98,7 @@ export default function MeetupForm(props) {
           </FormGroup>
 
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup address"
               type="text"
@@ -117,7 +118,7 @@ export default function MeetupForm(props) {
           </FormGroup>
 
           <FormGroup className="form-field">
-            <TextField
+            <StyledInput
               className="form-input"
               label="Meetup description"
               type="text"

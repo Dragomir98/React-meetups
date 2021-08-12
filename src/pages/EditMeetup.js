@@ -45,7 +45,7 @@ export default function EditMeetup(props) {
   console.log(id);
 
   return (
-    <div>
+    <div className="section-full">
       <Typography variant="h4" align="center" className="page-title">
         Edit Meetup
       </Typography>

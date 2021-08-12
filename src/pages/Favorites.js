@@ -19,7 +19,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <section>
+    <section className="section-full">
       <Typography variant="h4" align="center" className="page-title">
         Favorites
       </Typography>

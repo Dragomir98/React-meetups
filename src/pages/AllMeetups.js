@@ -37,11 +37,10 @@ export default function AllMeetupsPage() {
           meetups.push(meetup);
         }
 
-        //then get the actual data
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
-  }, []); //if there is no second param to useEffect, the effect function executes when the component executes
+  }, []);
 
   if (isLoading) {
     return (

@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Drawer } from "@material-ui/core";
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
+
+const StyledNav = styled(AppBar)`
+  background-color: ${(props) => props.theme.navbar};
+  & > header {
+    background-color: inherit;
+  }
+`;
 
 export default function NavigationMenu() {
   const favoritesCtx = useContext(FavoritesContext);
@@ -122,9 +130,11 @@ export default function NavigationMenu() {
 
   return (
     <div className={materialClassess.root}>
-      <AppBar position="static">
+      <StyledNav>
+        {/* <AppBar position="static"> */}
         {mobileView ? displayMobile() : displayDesktop()}
-      </AppBar>
+        {/* </AppBar> */}
+      </StyledNav>
     </div>
   );
 }
