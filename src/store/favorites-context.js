@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 
-//build a react component(thats why it starts with uppercase)
 const FavoritesContext = createContext({
   favorites: [],
   totalFavorites: 0,
@@ -22,7 +21,6 @@ export function FavoritesContextProvider(props) {
   }
 
   function handleItemIsFavorite(meetupId) {
-    //return true/false if even on item in the array meets the requirement
     return userFavorites.some((meetup) => meetup.id === meetupId);
   }
 

@@ -1,2 +1,3 @@
 # React-meetups
- This project focuses on using a Firebase realtime database along with Material-UI styling.
+
+This project is focused on using a Firebase realtime database along with Material-UI styling and styled components.

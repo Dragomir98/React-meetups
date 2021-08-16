@@ -23,10 +23,9 @@ export default function AllMeetupsPage() {
       "https://react-meetups-e5862-default-rtdb.firebaseio.com/meetups.json"
     )
       .then((response) => {
-        return response.json(); //get the response data as json
+        return response.json();
       })
       .then((data) => {
-        //transport the data using helper array
         const meetups = [];
         for (const key in data) {
           const meetup = {

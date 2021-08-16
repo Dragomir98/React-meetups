@@ -130,11 +130,7 @@ export default function NavigationMenu() {
 
   return (
     <div className={materialClassess.root}>
-      <StyledNav>
-        {/* <AppBar position="static"> */}
-        {mobileView ? displayMobile() : displayDesktop()}
-        {/* </AppBar> */}
-      </StyledNav>
+      <StyledNav>{mobileView ? displayMobile() : displayDesktop()}</StyledNav>
     </div>
   );
 }

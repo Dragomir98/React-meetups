@@ -16,21 +16,13 @@ export default function EditMeetup(props) {
     image: location.state?.image,
   };
 
-  // const currentMeetup = async (meetups) => {
-  //   const data = await fetch(
-  //     `https://react-meetups-e5862-default-rtdb.firebaseio.com/meetups.json`
-  //   );
-  //   return data;
-  // };
-  // console.log(currentMeetup);
-
   const handleEditMeetup = async (meetupData) => {
     try {
       await fetch(
         `https://react-meetups-e5862-default-rtdb.firebaseio.com/meetups/${currentMeetup.id}.json`,
         {
           method: "PUT",
-          body: JSON.stringify(meetupData), //what type if data to send
+          body: JSON.stringify(meetupData),
           headers: {
             "Content-Type": "application/json",
           },
