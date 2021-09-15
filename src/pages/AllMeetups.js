@@ -19,9 +19,7 @@ export default function AllMeetupsPage() {
   useEffect(() => {
     setIsLoading(true);
     //fetch data on load
-    fetch(
-      "https://react-meetups-e5862-default-rtdb.firebaseio.com/meetups.json"
-    )
+    fetch(`${process.env.REACT_APP_FIREBASE}/meetups.json`)
       .then((response) => {
         return response.json();
       })

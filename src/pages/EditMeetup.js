@@ -19,7 +19,7 @@ export default function EditMeetup(props) {
   const handleEditMeetup = async (meetupData) => {
     try {
       await fetch(
-        `https://react-meetups-e5862-default-rtdb.firebaseio.com/meetups/${currentMeetup.id}.json`,
+        `${process.env.REACT_APP_FIREBASE}/meetups/${currentMeetup.id}.json`,
         {
           method: "PUT",
           body: JSON.stringify(meetupData),
