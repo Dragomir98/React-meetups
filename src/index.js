@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { FavoritesContextProvider } from "../src/store/favorites-context";
 
 ReactDOM.render(
   <FavoritesContextProvider>
-    <BrowserRouter>
+    <HashRouter basename="/meetups/">
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </FavoritesContextProvider>,
   document.getElementById("root")
 );

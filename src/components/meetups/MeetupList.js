@@ -12,7 +12,7 @@ export default function MeetupList(props) {
   const materialClasses = useStyles();
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <div className={materialClasses.root}>
         <Grid container spacing={3}>
           {props.meetups.map((meetup) => (

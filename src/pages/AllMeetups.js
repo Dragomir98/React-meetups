@@ -1,8 +1,8 @@
 import MeetupList from "../components/meetups/MeetupList";
 import { useState } from "react";
 import { useEffect } from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +48,7 @@ export default function AllMeetupsPage() {
   }
 
   return (
-    <section>
+    <Box>
       <Typography variant="h4" className="page-title" align="center">
         All Meetups
       </Typography>
@@ -65,6 +65,6 @@ export default function AllMeetupsPage() {
           </Typography>
         )}
       </div>
-    </section>
+    </Box>
   );
 }

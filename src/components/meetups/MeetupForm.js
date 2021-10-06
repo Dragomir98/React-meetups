@@ -1,28 +1,18 @@
 import Card from "../ui/Card";
 import { Container, Button, FormGroup } from "@material-ui/core";
-import FormStates from "./FormStates";
 import CancelIcon from "@material-ui/icons/Cancel";
 import StyledInput from "../ui/StyledInput";
+import { useState } from "react";
 
 export default function MeetupForm(props) {
-  const {
-    title,
-    setTitle,
-    image,
-    setImage,
-    address,
-    setAddress,
-    description,
-    setDescription,
-    titleError,
-    setTitleError,
-    imageError,
-    setImageError,
-    addressError,
-    setAddressError,
-    descriptionError,
-    setDescriptionError,
-  } = FormStates();
+  const [title, setTitle] = useState(false);
+  const [image, setImage] = useState(false);
+  const [address, setAddress] = useState(false);
+  const [description, setDescription] = useState(false);
+  const [titleError, setTitleError] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [addressError, setAddressError] = useState(false);
+  const [descriptionError, setDescriptionError] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();

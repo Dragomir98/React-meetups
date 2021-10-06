@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import FavoritesContext from "../../store/favorites-context";
-// import firebase from "../../firebase";
+import firebase from "../../firebase";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
-import firebase from "firebase";
 
 const useStyles = makeStyles((theme) => ({
   paper: {

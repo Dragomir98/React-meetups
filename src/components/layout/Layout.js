@@ -63,10 +63,10 @@ const TopBar = () => {
 
 export default function Layout(props) {
   return (
-    <div>
+    <>
       <NavigationMenu />
       <TopBar />
       <ContentContainer>{props.children}</ContentContainer>
-    </div>
+    </>
   );
 }
